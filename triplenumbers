@@ -1,0 +1,34 @@
+def triple(nums):
+    import copy
+    nummpa= {}
+    resp = []
+    resp_str = []
+    nums = sorted(nums)
+    for i in nums:
+        if i in nummpa.keys():
+            nummpa[i] +=1
+        else:
+            nummpa[i] = 1
+    for i,j in enumerate(nums):
+        for k,l in  enumerate(nums):
+            if k > i: 
+                sum = j+l                     
+                if sum*-1 in nummpa.keys():
+                    if sum*-1 ==l:
+                        if nummpa[l] <=1:
+                            break
+                    if sum*-1 ==j:
+                        if nummpa[j] <=1:
+                            break
+                    if sum*-1 == l and sum*-1 ==j:
+                        print ("all same ",nummpa[l])
+                        if nummpa[l] <= 2:
+                            break
+                    rstr = ''.join(str(o) for o in sorted([j,l,sum*-1]))
+                    if rstr in resp_str:
+                        continue
+                    else:
+                        resp_str.append(rstr)
+                        resp.append(sorted([j,l,sum*-1]))
+    print(resp)
+    return resp
