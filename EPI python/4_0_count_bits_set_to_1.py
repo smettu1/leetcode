@@ -7,6 +7,9 @@ Algo:
 3.Add the result of the AND operation to the var that is holding the number of bits.
 4.right shift the number by 1 bit using bitwise right shift operator and continue the while loop
 5.Return the number of bits.
+
+Time complexity:
+O(n)-->N being the number of bits in x and we check each bit.
 '''
 
 def count_bits(x):
