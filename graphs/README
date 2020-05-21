@@ -38,6 +38,7 @@ level order
     we can use queue to push the nodes being visited
     you can use size in of the queue at any level to dump the level
 
+https://leetcode.com/explore/learn/card/data-structure-tree/133/conclusion/942/
 
 given preorder and inorder or postporder and inorder construct the binary tree:
     from inorder constuct the val:index dict
@@ -50,10 +51,45 @@ given preorder and inorder or postporder and inorder construct the binary tree:
             root.right = helper(index+1,right)
            return root
  
+ https://leetcode.com/explore/learn/card/data-structure-tree/133/conclusion/994/
  construct level order with next pointer on a full bst
     idea is to go like inorder by visting left most node and constcut linked list
         2 pointers
          1: from left to right 
          2: from node.right.next to node.next.left
+
+https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/538/
+Botton up uproach
+find the unival tree count 
+      helper(root):
+         if not root:
+            return 0,true
+         is_unival = True
+         lcount,lunival = helper(root.left)
+         rcount,runival = helper(root.right)
+         if not (lunival and runival):
+            is_unival = False
+         if root.left and root.val != root.left.val:
+            is_unival = False
+         if root.right and root.val != root.right.val:
+            is_unival = False  
+         if is_unival:
+            return lcount+rrcount+1
+         return lcount+rcount
+
+https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/536/
+symetric tree
+push root to stack1 and stack2 
+while(stack1)
+   node1 = stack1.pop()
+   node2 = stack2.pop()
+   if node1.val != node2.val or of the children points are different
+      return false
+   else:
+      push stack1(node1.left)
+      push stack2(node2.right)
+      
+
+
   
   
