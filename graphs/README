@@ -39,3 +39,21 @@ level order
     you can use size in of the queue at any level to dump the level
 
 
+given preorder and inorder or postporder and inorder construct the binary tree:
+    from inorder constuct the val:index dict
+    helper function from 0 to n-1
+            if left > right:
+               return none
+            root = postorder.pop() or preorder.pop(0) [taking root ele]
+            find the index from idx
+            root.left = helper(left,index-1)
+            root.right = helper(index+1,right)
+           return root
+ 
+ construct level order with next pointer on a full bst
+    idea is to go like inorder by visting left most node and constcut linked list
+        2 pointers
+         1: from left to right 
+         2: from node.right.next to node.next.left
+  
+  
