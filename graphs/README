@@ -1,0 +1,41 @@
+DFS traversal
+
+
+preorder 
+   use stack push root
+   while stack not null:
+         pull element
+         print it
+         if right push that
+         if left push that 
+
+inorder:
+     node = root
+     while(stack or node):
+        if node.left
+          push to stack
+          node = node.left
+       if node is null:
+          node= pop from stack
+          visit the node
+          node = node.right
+
+postorder
+    stack1 = root
+    stack2 = none
+    while(stack1)
+        node = stack1.pop
+        stack2.push(node.val)
+        if node.left:
+            stack1.push(node.left)
+        if node.right:
+            stack1.push(node.right)
+        
+
+BFS traversal
+
+level order
+    we can use queue to push the nodes being visited
+    you can use size in of the queue at any level to dump the level
+
+
